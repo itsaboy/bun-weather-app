@@ -21,8 +21,8 @@ const getGeoData = async (currentLocation) => {
 
 // get current weather
 const getCurrentWeather = async (geoData) => {
-    let latitude = geoData.lat;
-    let longitude = geoData.lon;
+    const latitude = geoData.lat;
+    const longitude = geoData.lon;
 
     const req = `${endpoint}/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${key}`;
     const res = await fetch(req);
@@ -37,8 +37,8 @@ const getCurrentWeather = async (geoData) => {
 
 // get five-day forecast
 const getForecastWeather = async (geoData) => {
-    let latitude = geoData.lat;
-    let longitude = geoData.lon;
+    const latitude = geoData.lat;
+    const longitude = geoData.lon;
 
     const req = `${endpoint}/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${key}`;
     const res = await fetch(req);
@@ -102,13 +102,13 @@ const populateDropdown = () => {
     $("#saved-locations").append(`<option value="none" selected disabled>Location</option>`);
     for (let i = 0; i < history.length; i++) {
         if (!history[i].state) {
-            let loadedLocation =  $(`<option>${history[i].city}, ${history[i].country}</option>`);
+            const loadedLocation =  $(`<option>${history[i].city}, ${history[i].country}</option>`);
             loadedLocation.attr("country", history[i].country);
             loadedLocation.attr("state", "");
             loadedLocation.attr("city", history[i].city);
             $("#saved-locations").append(loadedLocation);
         } else {
-            let loadedLocation =  $(`<option>${history[i].city}, ${history[i].state}, ${history[i].country}</option>`);
+            const loadedLocation =  $(`<option>${history[i].city}, ${history[i].state}, ${history[i].country}</option>`);
             loadedLocation.attr("country", history[i].country);
             loadedLocation.attr("state", history[i].state);
             loadedLocation.attr("city", history[i].city);
