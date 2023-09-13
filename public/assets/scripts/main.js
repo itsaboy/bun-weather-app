@@ -1,4 +1,4 @@
-// get geodata
+// get geo data
 const getGeoData = async (currentLocation) => {
     const req = `${endpoint}/geo/1.0/direct?q=${currentLocation.city},${currentLocation.state},${currentLocation.country}&appid=${key}`;
     const res = await fetch(req);

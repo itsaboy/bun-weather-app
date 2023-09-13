@@ -24,7 +24,7 @@ jQuery(() => {
     // search button
     $("#search-button").on("click", (event) => {
         event.preventDefault();
-        currentLocation.city = $("#city-input").val().toUpperCase();
+        currentLocation.city = $("#city-input").val().toUpperCase().trim();
         inputErrorCheck();
         fieldReset();
     });
