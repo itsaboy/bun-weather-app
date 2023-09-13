@@ -1,0 +1,366 @@
+/* ==========================================================================
+   Body Container
+========================================================================== */
+
+.body-container {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    gap: 3rem;
+}
+
+/* Body Item IDs */
+
+#header {
+    grid-area: header;
+}
+
+#main {
+    grid-area: main;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+/* DRY */
+
+.body-container
+.header-container,
+.main-container,
+.footer-container {
+    display: grid;
+    height: 100%;
+    gap: 3rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Header Container
+========================================================================== */
+
+.header-container {
+    grid-template-areas:
+    "location header-heading";
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    place-items: center;
+}
+
+/* Header Item IDs */
+
+#location {
+    grid-area: location;
+}
+
+#header-heading {
+    grid-area: header-heading;
+}
+
+/* ==========================================================================
+   Main Container
+========================================================================== */
+
+.main-container {
+    grid-template-areas: 
+    "search-section current-section"
+    "history-section forecast-section"
+    "history-section forecast-section";
+    grid-template-rows: 2fr 3fr;
+    grid-template-columns: 1fr 3fr;
+}
+
+/* Main Item IDs */
+
+#search-section {
+    grid-area: search-section;
+}
+
+#history-section {
+    grid-area: history-section;
+}
+
+#current-section {
+    grid-area: current-section;
+}
+
+#forecast-section {
+    grid-area: forecast-section;
+}
+
+/* DRY */
+
+.main-container
+.search-container,
+.history-container,
+.current-container,
+.forecast-container,
+.save-container,
+.load-container {
+    display: grid;
+    height: 100%;
+    place-items: center;
+    gap: 1rem;
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* Search Container
+========================================================================== */
+
+.search-container {
+    grid-template-areas:
+    "search-heading"
+    "search-form";
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 1fr;
+}
+
+/* Search Item IDs */
+
+#search-heading {
+    grid-area: search-heading;
+}
+
+#search-form {
+    grid-area: search-form;
+    place-self: start;
+    width: 100%;
+}
+
+/* Search Form Container
+========================================================================== */
+
+.save-container {
+    grid-template-areas:
+    "country-label state-label"
+    "country-input state-input"
+    "city-label city-label"
+    "city-input city-input"
+    "search-button search-button";
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Search Form Item IDs */
+
+#city-label {
+    grid-area: city-label;
+}
+
+#state-label {
+    grid-area: state-label;
+}
+
+#country-label {
+    grid-area: country-label;
+}
+
+#city-input {
+    grid-area: city-input;
+}
+
+#state-input {
+    grid-area: state-input;
+}
+
+#country-input {
+    grid-area: country-input;
+}
+
+#search-button {
+    grid-area: search-button;
+}
+
+/* History Container
+========================================================================== */
+
+.history-container {
+    grid-template-areas:
+    "history-heading"
+    "load-form";
+    grid-template-rows: 1fr 9fr;
+    grid-template-columns: 1fr;
+}
+
+/* History Item IDs */
+
+#history-heading {
+    grid-area: history-heading;
+}
+
+#load-form {
+    grid-area: load-form;
+    place-self: start;
+    width: 100%;
+}
+
+/* History Form Container
+========================================================================== */
+
+.load-container {
+    grid-template-areas:
+    "load-button delete-button" 
+    "locations-label locations-label"
+    "saved-locations saved-locations";
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* History Form Item IDs */
+
+#locations-label {
+    grid-area: locations-label;
+}
+
+#saved-locations {
+    grid-area: saved-locations;
+}
+
+#load-button {
+    grid-area: load-button;
+}
+
+#delete-button {
+    grid-area: delete-button;
+}
+
+/* Current Container
+========================================================================== */
+
+.current-container {
+    grid-template-areas: 
+    "current-heading"
+    "current-data";
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 1fr;
+}
+
+/* Current Item IDs */
+
+#current-heading {
+    grid-area: current-heading;
+}
+
+#current-data {
+    grid-area: current-data;
+    width: 100%;
+}
+
+/* Weather Container
+========================================================================== */
+
+.day0-container {
+    display: grid;
+    grid-template-areas:
+    "day0-date day0-descr day0-temp day0-wind"
+    "day0-day day0-icon day0-feels day0-humid";
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    gap: 3rem;
+}
+
+/* Forecast Container
+========================================================================== */
+
+.forecast-container {
+    grid-template-areas:
+    "forecast-heading forecast-heading forecast-heading forecast-heading forecast-heading forecast-heading"
+    "forecast-labels day1-data day2-data day3-data day4-data day5-data";
+    grid-template-rows: 1fr 9fr;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+/* Forecast Item IDs */
+
+#forecast-heading {
+    grid-area: forecast-heading;
+}
+
+#forecast-labels {
+    grid-area: forecast-labels;
+}
+
+#day1-data {
+    grid-area: day1-data;
+}
+
+#day2-data {
+    grid-area: day2-data;
+}
+
+#day3-data {
+    grid-area: day3-data;
+}
+
+#day4-data {
+    grid-area: day4-data;
+}
+
+#day5-data {
+    grid-area: day5-data;
+}
+
+/* Forecast Day Containers
+========================================================================== */
+
+.forecast-container
+.label-container,
+.day1-container,
+.day2-container,
+.day3-container,
+.day4-container,
+.day5-container {
+    display: grid;
+    width: 100%;
+    place-items: center; 
+    grid-template-rows: repeat(7, 3rem);
+    grid-template-columns: 1fr; 
+    gap: 1rem;
+}
+
+/* ==========================================================================
+   Footer Container
+========================================================================== */
+
+.footer-container {
+    grid-template-areas:
+    "data-source";
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+/* Footer Item IDs */
+
+#data-source {
+    grid-area: data-source;
+    place-self: center;
+}
+
+/* Error Modal Container
+========================================================================== */
+
+#error-modal {
+    width: 25%;
+    height: 25%;
+    margin: auto;
+}
+
+.error-container {
+    display: grid;
+    grid-template-areas:
+    "error-txt"
+    "error-code"
+    "error-button";
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    height: 100%;
+    place-items: center;
+}

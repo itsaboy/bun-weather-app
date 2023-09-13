@@ -1,0 +1,167 @@
+/* ==========================================================================
+   Screen Width Below 1716px
+========================================================================== */
+
+@media only screen and (max-width: 1716px) {
+
+    .main-container {
+        grid-template-areas: 
+        "search-section current-section"
+        "history-section forecast-section"
+        "history-section forecast-section";
+        grid-template-rows: 1fr 3fr;
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .forecast-container {
+        grid-template-areas:
+        "forecast-heading"
+        "forecast-labels"
+        "day1-data"
+        "day2-data"
+        "day3-data"
+        "day4-data"
+        "day5-data";
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-columns: 1fr;
+        
+    }
+
+    .forecast-container
+    .label-container,
+    .day1-container,
+    .day2-container,
+    .day3-container,
+    .day4-container,
+    .day5-container {
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(7, 1fr);
+        width: 100%; 
+    }
+
+}
+
+/* ==========================================================================
+   Screen Width Below 1175px
+========================================================================== */
+
+@media only screen and (max-width: 1175px) {
+
+    .header-container {
+        grid-template-areas:
+        "header-heading"
+        "location";
+        grid-template-rows: 3fr 2fr;
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+
+    .main-container {
+        grid-template-areas: 
+        "search-section history-section"
+        "current-section current-section"
+        "forecast-section forecast-section";
+        grid-template-rows: repeat(2, 1fr) 3fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .history-container {
+        grid-template-areas:
+        "history-heading"
+        "load-form";
+        grid-template-rows: 1fr 4fr;
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==========================================================================
+   Screen Width Below 810px
+========================================================================== */
+
+@media only screen and (max-width: 810px) {
+
+    .main-container {
+        grid-template-areas: 
+        "search-section"
+        "history-section"
+        "current-section"
+        "forecast-section";
+        grid-template-rows: repeat(2, 1fr) 3fr 10fr;
+        grid-template-columns: 1fr;
+    }
+    
+    #current-heading {
+        display: none;
+    }
+
+    .current-container {
+        grid-template-areas: 
+        "current-data";
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .day0-container {
+        grid-template-areas:
+        "day0-date"
+        "day0-day"
+        "day0-descr"
+        "day0-icon"
+        "day0-temp"
+        "day0-feels"
+        "day0-wind"
+        "day0-humid";
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    #forecast-labels {
+        display: none;
+    }
+    
+    #forecast-heading {
+        display: none;
+    }
+
+    .forecast-container {
+        grid-template-areas:
+        "day1-data"
+        "day2-data"
+        "day3-data"
+        "day4-data"
+        "day5-data";
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: 1fr;   
+    }
+
+    .forecast-container
+    .day1-container,
+    .day2-container,
+    .day3-container,
+    .day4-container,
+    .day5-container {
+        display: grid;
+        width: 100%;
+        place-items: center; 
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-columns: 1fr; 
+        gap: 1rem;
+    }
+
+    #day1-data,
+    #day2-data,
+    #day3-data,
+    #day4-data,
+    #day5-data {
+        width: 95%;
+    }
+
+    #error-modal {
+        width: 75%;
+        height: 50%;
+        margin: auto;
+        top: 600px;
+    }
+
+}

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <!--Metadata-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible">
+        <title>Global Weather App</title>
+        <meta name="description" content="A web app that lets the user search a location and find the current weather plus the five-day forecast for that area">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--CSS-->
+        <link rel="stylesheet" href="./assets/css/layout.css">
+        <link rel="stylesheet" href="./assets/css/queries.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <!--External Scripts-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.9/dayjs.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.9/plugin/utc.min.js"></script>
+        <!--Internal Scripts-->
+        <script src="./assets/scripts/global.js" defer></script>
+        <script src="./assets/scripts/main.js" defer></script>
+        <script src="./assets/scripts/errors.js" defer></script>
+        <script src="./assets/scripts/ready.js" defer></script>
+    </head>
+
+    <body class="bg-sky-300 font-primary">
+        <div class="body-container">
+            <!--Header-->
+            <header id="header" class="bg-sky-900">
+                <div class="header-container">
+                    <h2 id="location" class="text-center text-sky-200 text-4xl p-5">
+                        <!--content injected by main.js-->
+                    </h2>
+                    <h1 id="header-heading" class="text-center text-sky-200 text-6xl p-5 font-semibold">
+                        Global Weather App
+                    </h1>
+                </div>
+            </header>
+            <!--Main-->
+            <main id="main">
+                <div class="main-container">
+                    <!--New Search-->
+                    <section id="search-section" class="bg-sky-400 rounded-md border-2 border-sky-800 shadow-lg">
+                        <div class="search-container">
+                            <h2 id="search-heading" class="text-center text-sky-950 text-2xl p-2 font-semibold">
+                                New Search
+                            </h2>
+                            <form id="search-form">
+                                <div class="save-container">
+                                    <label for="country-input" id="country-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
+                                        Country:
+                                    </label>
+                                    <select id="country-input" class="bg-sky-200 w-24 py-1">
+                                        <option value="none" selected disabled>Country:</option>
+                                        <option value="AFG">Afghanistan</option>
+                                        <option value="ALA">Aland Islands</option>
+                                        <option value="ALB">Albania</option>
+                                        <option value="DZA">Algeria</option>
+                                        <option value="ASM">American Samoa</option>
+                                        <option value="AND">Andorra</option>
+                                        <option value="AGO">Angola</option>
+                                        <option value="AIA">Anguilla</option>
+                                        <option value="ATA">Antarctica</option>
+                                        <option value="ATG">Antigua and Barbuda</option>
+                                        <option value="ARG">Argentina</option>
+                                        <option value="ARM">Armenia</option>
+                                        <option value="ABW">Aruba</option>
+                                        <option value="AUS">Australia</option>
+                                        <option value="AUT">Austria</option>
+                                        <option value="AZE">Azerbaijan</option>
+                                        <option value="BHS">Bahamas</option>
+                                        <option value="BHR">Bahrain</option>
+                                        <option value="BGD">Bangladesh</option>
+                                        <option value="BRB">Barbados</option>
+                                        <option value="BLR">Belarus</option>
+                                        <option value="BEL">Belgium</option>
+                                        <option value="BLZ">Belize</option>
+                                        <option value="BEN">Benin</option>
+                                        <option value="BMU">Bermuda</option>
+                                        <option value="BTN">Bhutan</option>
+                                        <option value="BOL">Bolivia</option>
+                                        <option value="BES">Bonaire, Sint Eustatius and Saba</option>
+                                        <option value="BIH">Bosnia and Herzegovina</option>
+                                        <option value="BWA">Botswana</option>
+                                        <option value="BVT">Bouvet Island</option>
+                                        <option value="BRA">Brazil</option>
+                                        <option value="IOT">British Indian Ocean Territory</option>
+                                        <option value="BRN">Brunei Darussalam</option>
+                                        <option value="BGR">Bulgaria</option>
+                                        <option value="BFA">Burkina Faso</option>
+                                        <option value="BDI">Burundi</option>
+                                        <option value="KHM">Cambodia</option>
+                                        <option value="CMR">Cameroon</option>
+                                        <option value="CAN">Canada</option>
+                                        <option value="CPV">Cape Verde</option>
+                                        <option value="CYM">Cayman Islands</option>
+                                        <option value="CAF">Central African Republic</option>
+                                        <option value="TCD">Chad</option>
+                                        <option value="CHL">Chile</option>
+                                        <option value="CHN">China</option>
+                                        <option value="CXR">Christmas Island</option>
+                                        <option value="CCK">Cocos (Keeling) Islands</option>
+                                        <option value="COL">Colombia</option>
+                                        <option value="COM">Comoros</option>
+                                        <option value="COG">Congo</option>
+                                        <option value="COD">Congo, Democratic Republic of the Congo</option>
+                                        <option value="COK">Cook Islands</option>
+                                        <option value="CRI">Costa Rica</option>
+                                        <option value="CIV">Cote D'Ivoire</option>
+                                        <option value="HRV">Croatia</option>
+                                        <option value="CUB">Cuba</option>
+                                        <option value="CUW">Curacao</option>
+                                        <option value="CYP">Cyprus</option>
+                                        <option value="CZE">Czech Republic</option>
+                                        <option value="DNK">Denmark</option>
+                                        <option value="DJI">Djibouti</option>
+                                        <option value="DMA">Dominica</option>
+                                        <option value="DOM">Dominican Republic</option>
+                                        <option value="ECU">Ecuador</option>
+                                        <option value="EGY">Egypt</option>
+                                        <option value="SLV">El Salvador</option>
+                                        <option value="GNQ">Equatorial Guinea</option>
+                                        <option value="ERI">Eritrea</option>
+                                        <option value="EST">Estonia</option>
+                                        <option value="ETH">Ethiopia</option>
+                                        <option value="FLK">Falkland Islands (Malvinas)</option>
+                                        <option value="FRO">Faroe Islands</option>
+                                        <option value="FJI">Fiji</option>
+                                        <option value="FIN">Finland</option>
+                                        <option value="FRA">France</option>
+                                        <option value="GUF">French Guiana</option>
+                                        <option value="PYF">French Polynesia</option>
+                                        <option value="ATF">French Southern Territories</option>
+                                        <option value="GAB">Gabon</option>
+                                        <option value="GMB">Gambia</option>
+                                        <option value="GEO">Georgia</option>
+                                        <option value="DEU">Germany</option>
+                                        <option value="GHA">Ghana</option>
+                                        <option value="GIB">Gibraltar</option>
+                                        <option value="GRC">Greece</option>
+                                        <option value="GRL">Greenland</option>
+                                        <option value="GRD">Grenada</option>
+                                        <option value="GLP">Guadeloupe</option>
+                                        <option value="GUM">Guam</option>
+                                        <option value="GTM">Guatemala</option>
+                                        <option value="GGY">Guernsey</option>
+                                        <option value="GIN">Guinea</option>
+                                        <option value="GNB">Guinea-Bissau</option>
+                                        <option value="GUY">Guyana</option>
+                                        <option value="HTI">Haiti</option>
+                                        <option value="HMD">Heard Island and Mcdonald Islands</option>
+                                        <option value="VAT">Holy See (Vatican City State)</option>
+                                        <option value="HND">Honduras</option>
+                                        <option value="HKG">Hong Kong</option>
+                                        <option value="HUN">Hungary</option>
+                                        <option value="ISL">Iceland</option>
+                                        <option value="IND">India</option>
+                                        <option value="IDN">Indonesia</option>
+                                        <option value="IRN">Iran, Islamic Republic of</option>
+                                        <option value="IRQ">Iraq</option>
+                                        <option value="IRL">Ireland</option>
+                                        <option value="IMN">Isle of Man</option>
+                                        <option value="ISR">Israel</option>
+                                        <option value="ITA">Italy</option>
+                                        <option value="JAM">Jamaica</option>
+                                        <option value="JPN">Japan</option>
+                                        <option value="JEY">Jersey</option>
+                                        <option value="JOR">Jordan</option>
+                                        <option value="KAZ">Kazakhstan</option>
+                                        <option value="KEN">Kenya</option>
+                                        <option value="KIR">Kiribati</option>
+                                        <option value="PRK">Korea, Democratic People's Republic of</option>
+                                        <option value="KOR">Korea, Republic of</option>
+                                        <option value="XKX">Kosovo</option>
+                                        <option value="KWT">Kuwait</option>
+                                        <option value="KGZ">Kyrgyzstan</option>
+                                        <option value="LAO">Lao People's Democratic Republic</option>
+                                        <option value="LVA">Latvia</option>
+                                        <option value="LBN">Lebanon</option>
+                                        <option value="LSO">Lesotho</option>
+                                        <option value="LBR">Liberia</option>
+                                        <option value="LBY">Libyan Arab Jamahiriya</option>
+                                        <option value="LIE">Liechtenstein</option>
+                                        <option value="LTU">Lithuania</option>
+                                        <option value="LUX">Luxembourg</option>
+                                        <option value="MAC">Macao</option>
+                                        <option value="MKD">Macedonia, the Former Yugoslav Republic of</option>
+                                        <option value="MDG">Madagascar</option>
+                                        <option value="MWI">Malawi</option>
+                                        <option value="MYS">Malaysia</option>
+                                        <option value="MDV">Maldives</option>
+                                        <option value="MLI">Mali</option>
+                                        <option value="MLT">Malta</option>
+                                        <option value="MHL">Marshall Islands</option>
+                                        <option value="MTQ">Martinique</option>
+                                        <option value="MRT">Mauritania</option>
+                                        <option value="MUS">Mauritius</option>
+                                        <option value="MYT">Mayotte</option>
+                                        <option value="MEX">Mexico</option>
+                                        <option value="FSM">Micronesia, Federated States of</option>
+                                        <option value="MDA">Moldova, Republic of</option>
+                                        <option value="MCO">Monaco</option>
+                                        <option value="MNG">Mongolia</option>
+                                        <option value="MNE">Montenegro</option>
+                                        <option value="MSR">Montserrat</option>
+                                        <option value="MAR">Morocco</option>
+                                        <option value="MOZ">Mozambique</option>
+                                        <option value="MMR">Myanmar</option>
+                                        <option value="NAM">Namibia</option>
+                                        <option value="NRU">Nauru</option>
+                                        <option value="NPL">Nepal</option>
+                                        <option value="NLD">Netherlands</option>
+                                        <option value="ANT">Netherlands Antilles</option>
+                                        <option value="NCL">New Caledonia</option>
+                                        <option value="NZL">New Zealand</option>
+                                        <option value="NIC">Nicaragua</option>
+                                        <option value="NER">Niger</option>
+                                        <option value="NGA">Nigeria</option>
+                                        <option value="NIU">Niue</option>
+                                        <option value="NFK">Norfolk Island</option>
+                                        <option value="MNP">Northern Mariana Islands</option>
+                                        <option value="NOR">Norway</option>
+                                        <option value="OMN">Oman</option>
+                                        <option value="PAK">Pakistan</option>
+                                        <option value="PLW">Palau</option>
+                                        <option value="PSE">Palestinian Territory, Occupied</option>
+                                        <option value="PAN">Panama</option>
+                                        <option value="PNG">Papua New Guinea</option>
+                                        <option value="PRY">Paraguay</option>
+                                        <option value="PER">Peru</option>
+                                        <option value="PHL">Philippines</option>
+                                        <option value="PCN">Pitcairn</option>
+                                        <option value="POL">Poland</option>
+                                        <option value="PRT">Portugal</option>
+                                        <option value="PRI">Puerto Rico</option>
+                                        <option value="QAT">Qatar</option>
+                                        <option value="REU">Reunion</option>
+                                        <option value="ROM">Romania</option>
+                                        <option value="RUS">Russian Federation</option>
+                                        <option value="RWA">Rwanda</option>
+                                        <option value="BLM">Saint Barthelemy</option>
+                                        <option value="SHN">Saint Helena</option>
+                                        <option value="KNA">Saint Kitts and Nevis</option>
+                                        <option value="LCA">Saint Lucia</option>
+                                        <option value="MAF">Saint Martin</option>
+                                        <option value="SPM">Saint Pierre and Miquelon</option>
+                                        <option value="VCT">Saint Vincent and the Grenadines</option>
+                                        <option value="WSM">Samoa</option>
+                                        <option value="SMR">San Marino</option>
+                                        <option value="STP">Sao Tome and Principe</option>
+                                        <option value="SAU">Saudi Arabia</option>
+                                        <option value="SEN">Senegal</option>
+                                        <option value="SRB">Serbia</option>
+                                        <option value="SCG">Serbia and Montenegro</option>
+                                        <option value="SYC">Seychelles</option>
+                                        <option value="SLE">Sierra Leone</option>
+                                        <option value="SGP">Singapore</option>
+                                        <option value="SXM">Sint Maarten</option>
+                                        <option value="SVK">Slovakia</option>
+                                        <option value="SVN">Slovenia</option>
+                                        <option value="SLB">Solomon Islands</option>
+                                        <option value="SOM">Somalia</option>
+                                        <option value="ZAF">South Africa</option>
+                                        <option value="SGS">South Georgia and the South Sandwich Islands</option>
+                                        <option value="SSD">South Sudan</option>
+                                        <option value="ESP">Spain</option>
+                                        <option value="LKA">Sri Lanka</option>
+                                        <option value="SDN">Sudan</option>
+                                        <option value="SUR">Suriname</option>
+                                        <option value="SJM">Svalbard and Jan Mayen</option>
+                                        <option value="SWZ">Swaziland</option>
+                                        <option value="SWE">Sweden</option>
+                                        <option value="CHE">Switzerland</option>
+                                        <option value="SYR">Syrian Arab Republic</option>
+                                        <option value="TWN">Taiwan, Province of China</option>
+                                        <option value="TJK">Tajikistan</option>
+                                        <option value="TZA">Tanzania, United Republic of</option>
+                                        <option value="THA">Thailand</option>
+                                        <option value="TLS">Timor-Leste</option>
+                                        <option value="TGO">Togo</option>
+                                        <option value="TKL">Tokelau</option>
+                                        <option value="TON">Tonga</option>
+                                        <option value="TTO">Trinidad and Tobago</option>
+                                        <option value="TUN">Tunisia</option>
+                                        <option value="TUR">Turkey</option>
+                                        <option value="TKM">Turkmenistan</option>
+                                        <option value="TCA">Turks and Caicos Islands</option>
+                                        <option value="TUV">Tuvalu</option>
+                                        <option value="UGA">Uganda</option>
+                                        <option value="UKR">Ukraine</option>
+                                        <option value="ARE">United Arab Emirates</option>
+                                        <option value="GBR">United Kingdom</option>
+                                        <option value="USA">United States</option>
+                                        <option value="UMI">United States Minor Outlying Islands</option>
+                                        <option value="URY">Uruguay</option>
+                                        <option value="UZB">Uzbekistan</option>
+                                        <option value="VUT">Vanuatu</option>
+                                        <option value="VEN">Venezuela</option>
+                                        <option value="VNM">Viet Nam</option>
+                                        <option value="VGB">Virgin Islands, British</option>
+                                        <option value="VIR">Virgin Islands, U.s.</option>
+                                        <option value="WLF">Wallis and Futuna</option>
+                                        <option value="ESH">Western Sahara</option>
+                                        <option value="YEM">Yemen</option>
+                                        <option value="ZMB">Zambia</option>
+                                        <option value="ZWE">Zimbabwe</option>
+                                    </select>
+                                    <label for="state-input" id="state-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
+                                        State:
+                                    </label>
+                                    <select id="state-input" class="bg-sky-200 w-24 py-1">
+                                        <option value="none" selected disabled>State:</option>
+                                        <option  value="Alabama">AL</option>
+                                        <option  value="Alaska">AK</option>
+                                        <option  value="Arizona">AZ</option>
+                                        <option  value="Arkansas">AR</option>
+                                        <option  value="California">CA</option>
+                                        <option  value="Colorado">CO</option>
+                                        <option  value="Connecticut">CT</option>
+                                        <option  value="Delaware">DE</option>
+                                        <option  value="Florida">FL</option>
+                                        <option  value="Georgia">GA</option>
+                                        <option  value="Hawaii">HI</option>
+                                        <option  value="Idaho">ID</option>
+                                        <option  value="Illinois">IL</option>
+                                        <option  value="Indiana">IN</option>
+                                        <option  value="Iowa">IA</option>
+                                        <option  value="Kansas">KS</option>
+                                        <option  value="Kentucky">KY</option>
+                                        <option  value="Louisiana">LA</option>
+                                        <option  value="Maine">ME</option>
+                                        <option  value="Maryland">MD</option>
+                                        <option  value="Massachusetts">MA</option>
+                                        <option  value="Michigan">MI</option>
+                                        <option  value="Minnesota">MN</option>
+                                        <option  value="Mississippi">MS</option>
+                                        <option  value="Missouri">MO</option>
+                                        <option  value="Montana">MT</option>
+                                        <option  value="Nebraska">NE</option>
+                                        <option  value="Nevada">NV</option>
+                                        <option  value="New Hampshire">NH</option>
+                                        <option  value="New Jersey">NJ</option>
+                                        <option  value="New Mexico">NM</option>
+                                        <option  value="New York">NY</option>
+                                        <option  value="North Carolina">NC</option>
+                                        <option  value="North Dakota">ND</option>
+                                        <option  value="Ohio">OH</option>
+                                        <option  value="Oklahoma">OK</option>
+                                        <option  value="Oregon">OR</option>
+                                        <option  value="Pennsylvania">PA</option>
+                                        <option  value="Rhode Island">RI</option>
+                                        <option  value="South Carolina">SC</option>
+                                        <option  value="South Dakota">SD</option>
+                                        <option  value="Tennessee">TN</option>
+                                        <option  value="Texas">TX</option>
+                                        <option  value="Utah">UT</option>
+                                        <option  value="Vermont">VT</option>
+                                        <option  value="Virginia">VA</option>
+                                        <option  value="Washington">WA</option>
+                                        <option  value="West Virginia">WV</option>
+                                        <option  value="Wisconsin">WI</option>
+                                        <option  value="Wyoming">WY</option>
+                                    </select>
+                                    <label for="city-input" id="city-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
+                                        City:
+                                    </label>
+                                    <input id="city-input" class="bg-sky-200 w-56 py-1 px-2">
+                                    <button id="search-button" class="bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800">
+                                        Search
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                    <!--Search History-->
+                    <section id="history-section" class="bg-sky-400 rounded-md border-2 border-sky-800 shadow-lg">
+                        <div class="history-container">
+                            <h2 id="history-heading" class="text-center text-sky-950 text-2xl p-2 font-semibold">
+                                Location History
+                            </h2>
+                            <form id="load-form">
+                                <div class="load-container">
+                                    <button id="load-button" class="bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800">
+                                        Load
+                                    </button>
+                                    <button id="delete-button" class="bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800">
+                                        Delete
+                                    </button>
+                                    <label for="saved-locations" id="locations-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
+                                        Saved Locations:
+                                    </label>
+                                    <select id="saved-locations" class="bg-sky-200 w-56 py-1">
+                                        <option class="text-left">
+                                            <!--content injected by main.js-->
+                                        </option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                    <!--Current Weather-->
+                    <section id="current-section" class="bg-sky-500 rounded-lg shadow-2xl font-semibold">
+                        <div class="current-container">
+                            <h2 id="current-heading" class="text-center text-sky-950 text-4xl p-2 underline">
+                                Current Weather
+                            </h2>
+                            <section id="current-data" class="text-center text-sky-950 text-2xl p-2 hidden">
+                                <div class="day0-container">
+                                    <h3 id="day0-date" class="text-3xl">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day0-day" class="text-3xl">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day0-descr" class="text-3xl">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <img id="day0-icon" class="w-24" alt="weather icon">
+                                    <h3 id="day0-temp">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day0-feels">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day0-humid">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day0-wind">
+                                        <!--content injected by main.js-->
+                                    </h3>                            
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                    <!--Five Day Forecast-->
+                    <section id="forecast-section" class="bg-sky-500 text-center text-sky-200 text-xl p-2 font-semibold rounded-lg shadow-2xl">
+                        <div class="forecast-container">
+                            <h2 id="forecast-heading" class="text-center text-sky-950 text-4xl p-2 font-semibold underline">
+                                5-Day Forecast
+                            </h2>
+                            <section id="forecast-labels" class="bg-sky-950 p-8 rounded-md border-2 border-sky-200 shadow-lg hidden">
+                                <div class="label-container">
+                                    <h3 id="label-date">
+                                        Date:
+                                    </h3>
+                                    <h3 id="label-day">
+                                        Day of Week:
+                                    </h3>
+                                    <h3 id="label-descr">
+                                        Weather:
+                                    </h3>
+                                    <img id="label-icon" class="w-20" src="./assets/icons/rainbow.svg" alt="placeholder icon">
+                                    <h3 id="label-temp">
+                                        Temperature:
+                                    </h3>
+                                    <h3 id="label-humid">
+                                        Humidity:
+                                    </h3>
+                                    <h3 id="label-wind">
+                                        Wind Speed:
+                                    </h3>
+                                </div>
+                            </section>
+                            <!--Day One-->
+                            <section id="day1-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg hidden">
+                                <div class="day1-container">
+                                    <h3 id="day1-date" class="f-date">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day1-day">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day1-descr">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <img id="day1-icon" class="f-icon w-20" alt="weather icon">
+                                    <h3 id="day1-temp">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day1-humid">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day1-wind">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                </div>
+                            </section>
+                            <!--Day Two-->
+                            <section id="day2-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg hidden">
+                                <div class="day2-container">
+                                    <h3 id="day2-date" class="f-date">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day2-day">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day2-descr">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <img id="day2-icon" class="f-icon w-20" alt="weather icon">
+                                    <h3 id="day2-temp">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day2-humid">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day2-wind">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                </div>
+                            </section>
+                            <!--Day Three-->
+                            <section id="day3-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg hidden">
+                                <div class="day3-container">
+                                    <h3 id="day3-date" class="f-date">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day3-day">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day3-descr">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <img id="day3-icon" class="f-icon w-20" alt="weather icon">
+                                    <h3 id="day3-temp">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day3-humid">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day3-wind">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                </div>
+                            </section>
+                            <!--Day Four-->
+                            <section id="day4-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg hidden">
+                                <div class="day4-container">
+                                    <h3 id="day4-date" class="f-date">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day4-day">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day4-descr">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <img id="day4-icon" class="f-icon w-20" alt="weather icon">
+                                    <h3 id="day4-temp">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day4-humid">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day4-wind">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                </div>
+                            </section>
+                            <!--Day Five-->
+                            <section id="day5-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg hidden">
+                                <div class="day5-container">
+                                    <h3 id="day5-date" class="f-date">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day5-day">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day5-descr">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <img id="day5-icon" class="f-icon w-20" alt="weather icon">
+                                    <h3 id="day5-temp">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day5-humid">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day5-wind">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <!--Footer-->
+            <footer id="footer" class="bg-sky-900">
+                <div class="footer-container">
+                    <a id="data-source" class="text-center text-sky-200 text-lg p-5">
+                        Data Provided By: OpenWeather
+                    </a>
+                </div>
+            </footer>
+            <!--Loading-->
+            <dialog>
+                <div class="loading-container">
+
+                </div>
+            </dialog>
+            <!--Error-->
+            <section id="error-modal" class="hidden absolute inset-0 bg-rose-800 rounded-3xl shadow-2xl border-solid border-2 border-slate-200 p-5">
+                <div class="error-container">
+                    <h2 id="error-txt" class="text-red-200 text-5xl text-center">
+                        Error!
+                    </h2>
+                    <p id="error-code" class="text-red-200 text-3xl text-center">
+                        <!--content injected by errors.js-->
+                    </p>
+                    <button id="error-button"
+                        class="w-24 bg-red-400 px-4 py-1 rounded-full border-2 border-slate-950 hover:bg-slate-950 hover:border-slate-100 hover:text-red-400">
+                        Ok
+                    </button>
+                </div>
+            </section>
+        </div>
+    </body>
+    
+</html>
