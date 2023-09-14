@@ -354,6 +354,11 @@ const displayForecastWeather = (forecastData) => {
 // loading animation
 const searchLoading = () => {
     $("#search-container").addClass("opacity-25");
+    $("#history-container").addClass("opacity-25");
+    $("#search-section").removeClass("bg-sky-400");
+    $("#history-section").removeClass("bg-sky-400");
+    $("#search-section").addClass("bg-slate-400");
+    $("#history-section").addClass("bg-slate-400");
     $("#search-load").removeClass("hidden");
     $("#search-button").removeClass("hover:bg-sky-200");
     $("#search-button").removeClass("hover:text-sky-950");
@@ -374,7 +379,12 @@ const searchLoading = () => {
 };
 
 const loadLoading = () => {
+    $("#search-container").addClass("opacity-25");
     $("#history-container").addClass("opacity-25");
+    $("#search-section").removeClass("bg-sky-400");
+    $("#history-section").removeClass("bg-sky-400");
+    $("#search-section").addClass("bg-slate-400");
+    $("#history-section").addClass("bg-slate-400");
     $("#load-load").removeClass("hidden");
     $("#search-button").removeClass("hover:bg-sky-200");
     $("#search-button").removeClass("hover:text-sky-950");
@@ -399,6 +409,10 @@ const doneLoading = () => {
     $("#search-load").addClass("hidden");
     $("#history-container").removeClass("opacity-25");
     $("#load-load").addClass("hidden");
+    $("#search-section").removeClass("bg-slate-400");
+    $("#history-section").removeClass("bg-slate-400");
+    $("#search-section").addClass("bg-sky-400");
+    $("#history-section").addClass("bg-sky-400");
     $("#search-button").addClass("hover:bg-sky-200");
     $("#search-button").addClass("hover:text-sky-950");
     $("#search-button").addClass("hover:border-sky-800");
