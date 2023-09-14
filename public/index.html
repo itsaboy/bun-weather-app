@@ -24,10 +24,10 @@
         <script src="./assets/scripts/ready.js" defer></script>
     </head>
 
-    <body class="bg-sky-300 font-primary">
+    <body class="bg-sky-900 font-primary">
         <div class="body-container">
             <!--Header-->
-            <header id="header" class="bg-sky-900">
+            <header id="header" class="bg-sky-950">
                 <div class="header-container">
                     <h2 id="location" class="text-center text-yellow-400 text-4xl p-5">
                         <!--content injected by main.js-->
@@ -38,10 +38,10 @@
                 </div>
             </header>
             <!--Main-->
-            <main id="main">
+            <main id="main" class="bg-wave-pattern bg-center bg-cover bg-no-repeat">
                 <div id="main-container" class="pre-main-container">
                     <!--New Search-->
-                    <section id="search-section" class="bg-sky-400 rounded-md border-2 border-sky-800 shadow-lg">
+                    <section id="search-section" class="relative bg-sky-400 rounded-md border-2 border-sky-800 shadow-lg">
                         <div class="search-container">
                             <h2 id="search-heading" class="text-center text-sky-950 text-2xl p-2 font-semibold">
                                 New Search
@@ -53,6 +53,7 @@
                                     </label>
                                     <select id="country-input" class="bg-sky-200 w-24 py-1">
                                         <option value="none" selected disabled>Country:</option>
+                                        <option value="USA">United States</option>
                                         <option value="AFG">Afghanistan</option>
                                         <option value="ALA">Aland Islands</option>
                                         <option value="ALB">Albania</option>
@@ -291,7 +292,6 @@
                                         <option value="UKR">Ukraine</option>
                                         <option value="ARE">United Arab Emirates</option>
                                         <option value="GBR">United Kingdom</option>
-                                        <option value="USA">United States</option>
                                         <option value="UMI">United States Minor Outlying Islands</option>
                                         <option value="URY">Uruguay</option>
                                         <option value="UZB">Uzbekistan</option>
@@ -309,7 +309,7 @@
                                     <label for="state-input" id="state-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
                                         State:
                                     </label>
-                                    <select id="state-input" class="bg-sky-200 w-24 py-1">
+                                    <select id="state-input" class="bg-sky-200 w-24 py-1 disabled:opacity-25">
                                         <option value="none" selected disabled>State:</option>
                                         <option  value="Alabama">AL</option>
                                         <option  value="Alaska">AK</option>
@@ -365,16 +365,17 @@
                                     <label for="city-input" id="city-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
                                         City:
                                     </label>
-                                    <input id="city-input" class="bg-sky-200 w-56 py-1 px-2">
+                                    <input id="city-input" class="bg-sky-200 w-48 py-1 px-2">
                                     <button id="search-button" class="bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800">
                                         Search
                                     </button>
                                 </div>
                             </form>
                         </div>
+                        <img src="./assets/icons/loading.svg" id="search-load" class="hidden absolute inset-0 w-1/2 h-1/2 m-auto">
                     </section>
                     <!--Search History-->
-                    <section id="history-section" class="bg-sky-400 rounded-md border-2 border-sky-800 shadow-lg">
+                    <section id="history-section" class="relative bg-sky-400 rounded-md border-2 border-sky-800 shadow-lg">
                         <div class="history-container">
                             <h2 id="history-heading" class="text-center text-sky-950 text-2xl p-2 font-semibold">
                                 Location History
@@ -390,7 +391,7 @@
                                     <label for="saved-locations" id="locations-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
                                         Saved Locations:
                                     </label>
-                                    <select id="saved-locations" class="bg-sky-200 w-56 py-1">
+                                    <select id="saved-locations" class="bg-sky-200 w-48 py-1">
                                         <option class="text-left">
                                             <!--content injected by main.js-->
                                         </option>
@@ -398,6 +399,7 @@
                                 </div>
                             </form>
                         </div>
+                        <img src="./assets/icons/loading.svg" id="load-load" class="hidden absolute inset-0 w-1/2 h-1/2 m-auto">
                     </section>
                     <!--Current Weather-->
                     <section id="current-section" class="hidden bg-sky-500 rounded-lg shadow-2xl font-semibold">
@@ -445,7 +447,7 @@
                                         Date:
                                     </h3>
                                     <h3 id="label-day">
-                                        Day of Week:
+                                        Day:
                                     </h3>
                                     <h3 id="label-descr">
                                         Weather:
@@ -587,19 +589,13 @@
                 </div>
             </main>
             <!--Footer-->
-            <footer id="footer" class="bg-sky-900">
+            <footer id="footer" class="bg-sky-950">
                 <div class="footer-container">
-                    <a id="data-source" class="text-center text-sky-200 text-lg p-5">
-                        Data Provided By: OpenWeather
-                    </a>
+                    <p id="data-source" class="text-center text-sky-200 text-lg p-5">
+                        Data provided by <a href="https://openweathermap.org/" target_="blank" class="text-yellow-400">OpenWeather</a>
+                    </p>
                 </div>
             </footer>
-            <!--Loading-->
-            <dialog>
-                <div class="loading-container">
-
-                </div>
-            </dialog>
             <!--Error-->
             <section id="error-modal" class="hidden absolute inset-0 bg-rose-800 rounded-3xl shadow-2xl border-solid border-2 border-slate-200 p-5">
                 <div class="error-container">

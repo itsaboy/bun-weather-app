@@ -26,6 +26,7 @@ jQuery(() => {
         event.preventDefault();
         currentLocation.city = $("#city-input").val().trim();
         inputErrorCheck();
+        searchLoading();
         fieldReset();
     });
 
@@ -39,6 +40,7 @@ jQuery(() => {
     // load button
     $("#load-button").on("click", (event) => {
         event.preventDefault();
+        loadLoading();
         getGeoData(currentLocation);
     });
 

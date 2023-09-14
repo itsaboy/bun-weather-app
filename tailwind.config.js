@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         primary: "Ubuntu"
       },
+      backgroundImage: {
+        'wave-pattern': "url('../icons/waves-bg.svg')"
+      }
     },
   },
   plugins: [],

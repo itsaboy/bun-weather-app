@@ -39,6 +39,10 @@
         gap: 1rem;
     }
 
+    #error-modal {
+        width: 50%;
+    }
+
 }
 
 /* ==========================================================================
@@ -137,6 +141,11 @@
         grid-template-rows: repeat(6, 1fr);
         grid-template-columns: 1fr;
         width: 95%; 
+    }
+
+    #error-modal {
+        width: 75%;
+        height: 50%;
     }
 
 }
