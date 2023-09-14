@@ -142,10 +142,10 @@
 }
 
 /* ==========================================================================
-   Screen Width Below 400px
+   Screen Width Below 500px
 ========================================================================== */
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
 
     .post-main-container {
         grid-template-rows: repeat(2, 0.75fr) 3fr 10fr;
