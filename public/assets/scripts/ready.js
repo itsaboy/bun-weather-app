@@ -40,8 +40,8 @@ jQuery(() => {
     // load button
     $("#load-button").on("click", (event) => {
         event.preventDefault();
-        loadLoading();
-        getGeoData(currentLocation);
+        loadErrorCheck();
+        loadLoading();    
     });
 
     // delete button
@@ -64,6 +64,12 @@ jQuery(() => {
         $("#header").removeClass("opacity-50");
         $("#main").removeClass("opacity-50");
         $("#footer").removeClass("opacity-50");
+        $("#search-container").removeClass("opacity-25");
+        $("#search-load").addClass("hidden");
+        $("#history-container").removeClass("opacity-25");
+        $("#load-load").addClass("hidden");
+        $("#search-section").removeClass("bg-slate-400");
+        $("#history-section").removeClass("bg-slate-400");
         $("#search-button").addClass("hover:bg-sky-200");
         $("#search-button").addClass("hover:text-sky-950");
         $("#search-button").addClass("hover:border-sky-800");

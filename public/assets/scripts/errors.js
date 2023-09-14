@@ -19,6 +19,14 @@ const inputErrorCheck = () => {
     };      
 };
 
+const loadErrorCheck = () => {
+    if (!currentLocation.city) {
+        displayErrorModal("No location selected!");
+    } else {
+        getGeoData(currentLocation);
+    };
+};
+
 // error modal display
 const displayErrorModal = (errorMessage) => {
     $("#error-code").text(errorMessage);
