@@ -5,6 +5,7 @@ const getGeoData = async (currentLocation) => {
     const geoData = await res.json();
 
     if (res.status === 200 && newSearch === true) {
+        currentLocation.city = geoData[0].name;
         displayLocation(currentLocation);
         saveLocation(currentLocation);
         newSearch = false;
@@ -128,7 +129,10 @@ const displayLocation = (currentLocation) => {
 
 // displays current weather
 const displayCurrentWeather = (currentData) => {
-    $("#current-data").removeClass("hidden");
+    $("#main-container").removeClass("pre-main-container");
+    $("#main-container").addClass("post-main-container");
+    $("#current-section").removeClass("hidden");
+    $("#forecast-section").removeClass("hidden");
     unixTime = dayjs().utc().unix() * 1000;
     unixOffset = currentData.timezone;
     currentDate = dayjs(unixTime - unixOffset).format("MMM-D-YYYY");
@@ -139,7 +143,7 @@ const displayCurrentWeather = (currentData) => {
     $("#day0-temp").text(`Temp: ${currentData.main.temp.toFixed(0)}° F`);
     $("#day0-feels").text(`Feels Like: ${currentData.main.feels_like.toFixed(0)}° F`);
     $("#day0-humid").text(`Humidity: ${currentData.main.humidity}%`);
-    $("#day0-wind").text(`Wind Speed: ${currentData.wind.speed} mph`);
+    $("#day0-wind").text(`Wind: ${currentData.wind.speed} mph`);
     if (currentData.weather[0].main === "Clear") {
         $("#day0-icon").attr("src", sunny);
     } else if (currentData.weather[0].main === "Clouds") {
