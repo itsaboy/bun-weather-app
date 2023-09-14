@@ -32,7 +32,8 @@
 
 .body-container
 .header-container,
-.main-container,
+.pre-main-container,
+.post-main-container,
 .footer-container {
     display: grid;
     height: 100%;
@@ -49,7 +50,7 @@
     grid-template-areas:
     "location header-heading";
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     place-items: center;
 }
 
@@ -67,13 +68,20 @@
    Main Container
 ========================================================================== */
 
-.main-container {
+.pre-main-container {
     grid-template-areas: 
-    "search-section current-section"
-    "history-section forecast-section"
-    "history-section forecast-section";
-    grid-template-rows: 2fr 3fr;
-    grid-template-columns: 1fr 3fr;
+    "search-section history-section";
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.post-main-container {
+    grid-template-areas: 
+    "search-section history-section"
+    "current-section current-section"
+    "forecast-section forecast-section";
+    grid-template-rows: repeat(2, 1fr) 2fr;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 /* Main Item IDs */
@@ -96,7 +104,7 @@
 
 /* DRY */
 
-.main-container
+.main-container,
 .search-container,
 .history-container,
 .current-container,
@@ -185,7 +193,7 @@
     grid-template-areas:
     "history-heading"
     "load-form";
-    grid-template-rows: 1fr 9fr;
+    grid-template-rows: 1fr 4fr;
     grid-template-columns: 1fr;
 }
 
@@ -276,6 +284,7 @@
     "forecast-labels day1-data day2-data day3-data day4-data day5-data";
     grid-template-rows: 1fr 9fr;
     grid-template-columns: repeat(6, 1fr);
+    place-items: center;
 }
 
 /* Forecast Item IDs */
@@ -286,26 +295,32 @@
 
 #forecast-labels {
     grid-area: forecast-labels;
+    width: 100%;
 }
 
 #day1-data {
     grid-area: day1-data;
+    width: 100%;
 }
 
 #day2-data {
     grid-area: day2-data;
+    width: 100%;
 }
 
 #day3-data {
     grid-area: day3-data;
+    width: 100%;
 }
 
 #day4-data {
     grid-area: day4-data;
+    width: 100%;
 }
 
 #day5-data {
     grid-area: day5-data;
+    width: 100%;
 }
 
 /* Forecast Day Containers
@@ -321,7 +336,7 @@
     display: grid;
     width: 100%;
     place-items: center; 
-    grid-template-rows: repeat(7, 3rem);
+    grid-template-rows: repeat(7, 1fr);
     grid-template-columns: 1fr; 
     gap: 1rem;
 }

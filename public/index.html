@@ -10,6 +10,8 @@
         <meta name="description" content="A web app that lets the user search a location and find the current weather plus the five-day forecast for that area">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--CSS-->
+        <link rel="stylesheet" href="./assets/css/layout.css">
+        <link rel="stylesheet" href="./assets/css/queries.css">
         <link rel="stylesheet" href="./assets/css/style.css">
         <!--External Scripts-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -23,11 +25,11 @@
     </head>
 
     <body class="bg-sky-300 font-primary">
-        <div class="grid grid-cols-1 grid-rows-8 gap-12 h-screen">
+        <div class="body-container">
             <!--Header-->
-            <header id="header" class="bg-sky-900 row-span-1">
-                <div class="grid grid-cols-2 grid-rows-1 gap-12 h-full w-11/12 mx-auto place-items-center">
-                    <h2 id="location" class="text-center text-sky-200 text-4xl p-5">
+            <header id="header" class="bg-sky-900">
+                <div class="header-container">
+                    <h2 id="location" class="text-center text-yellow-400 text-4xl p-5">
                         <!--content injected by main.js-->
                     </h2>
                     <h1 id="header-heading" class="text-center text-sky-200 text-6xl p-5 font-semibold">
@@ -36,20 +38,20 @@
                 </div>
             </header>
             <!--Main-->
-            <main id="main" class="row-span-6">
-                <div id="main-container" class="grid grid-cols-2 grid-rows-1 gap-12 h-full w-11/12 mx-auto">
+            <main id="main">
+                <div id="main-container" class="pre-main-container">
                     <!--New Search-->
-                    <section id="search-section" class="row-span-1 bg-sky-400 rounded-md border-2 border-sky-800 shadow-lg">
-                        <div class="grid grid-cols-1 grid-rows-4 h-full">
-                            <h2 id="search-heading" class="rows-span-1 place-self-center text-center text-sky-950 text-2xl p-2 font-semibold">
+                    <section id="search-section" class="bg-sky-400 rounded-md border-2 border-sky-800 shadow-lg">
+                        <div class="search-container">
+                            <h2 id="search-heading" class="text-center text-sky-950 text-2xl p-2 font-semibold">
                                 New Search
                             </h2>
-                            <form id="search-form" class="row-start-2 row-end-5 rows-span-5">
-                                <div class="grid grid-cols-2 grid-rows-5 h-full place-items-center">
-                                    <label for="country-input" id="country-label" class="col-start-1 col-end-1 col-span-1 text-center text-sky-950 text-xl p-2 font-semibold">
+                            <form id="search-form">
+                                <div class="save-container">
+                                    <label for="country-input" id="country-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
                                         Country:
                                     </label>
-                                    <select id="country-input" class="row-start-2 row-end-2 col-span-1 bg-sky-200 w-24 py-1">
+                                    <select id="country-input" class="bg-sky-200 w-24 py-1">
                                         <option value="none" selected disabled>Country:</option>
                                         <option value="AFG">Afghanistan</option>
                                         <option value="ALA">Aland Islands</option>
@@ -304,7 +306,7 @@
                                         <option value="ZMB">Zambia</option>
                                         <option value="ZWE">Zimbabwe</option>
                                     </select>
-                                    <label for="state-input" id="state-label" class="col-start-2 col-end-2 col-span-1 text-center text-sky-950 text-xl p-2 font-semibold">
+                                    <label for="state-input" id="state-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
                                         State:
                                     </label>
                                     <select id="state-input" class="bg-sky-200 w-24 py-1">
@@ -360,11 +362,11 @@
                                         <option  value="Wisconsin">WI</option>
                                         <option  value="Wyoming">WY</option>
                                     </select>
-                                    <label for="city-input" id="city-label" class="col-span-2 text-center text-sky-950 text-xl p-2 font-semibold">
+                                    <label for="city-input" id="city-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
                                         City:
                                     </label>
-                                    <input id="city-input" class="col-span-2 bg-sky-200 w-56 py-1 px-2">
-                                    <button id="search-button" class="col-span-2 bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800">
+                                    <input id="city-input" class="bg-sky-200 w-56 py-1 px-2">
+                                    <button id="search-button" class="bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800">
                                         Search
                                     </button>
                                 </div>
@@ -373,22 +375,22 @@
                     </section>
                     <!--Search History-->
                     <section id="history-section" class="bg-sky-400 rounded-md border-2 border-sky-800 shadow-lg">
-                        <div class="grid grid-cols-1 grid-rows-4 h-full">
-                            <h2 id="history-heading" class="text-center place-self-center text-sky-950 text-2xl p-2 font-semibold">
+                        <div class="history-container">
+                            <h2 id="history-heading" class="text-center text-sky-950 text-2xl p-2 font-semibold">
                                 Location History
                             </h2>
-                            <form id="load-form" class="row-start-2 row-end-5 rows-span-5">
-                                <div class="grid grid-cols-2 grid-rows-5 h-full place-items-center">
+                            <form id="load-form">
+                                <div class="load-container">
                                     <button id="load-button" class="bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800">
                                         Load
                                     </button>
                                     <button id="delete-button" class="bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800">
                                         Delete
                                     </button>
-                                    <label for="saved-locations" id="locations-label" class="col-span-2 text-center text-sky-950 text-xl p-2 font-semibold">
+                                    <label for="saved-locations" id="locations-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
                                         Saved Locations:
                                     </label>
-                                    <select id="saved-locations" class="col-span-2 bg-sky-200 w-56 py-1">
+                                    <select id="saved-locations" class="bg-sky-200 w-56 py-1">
                                         <option class="text-left">
                                             <!--content injected by main.js-->
                                         </option>
@@ -398,13 +400,13 @@
                         </div>
                     </section>
                     <!--Current Weather-->
-                    <section id="current-section" class="hidden col-span-2 row-span-1 bg-sky-500 rounded-lg shadow-2xl font-semibold">
+                    <section id="current-section" class="hidden bg-sky-500 rounded-lg shadow-2xl font-semibold">
                         <div class="current-container">
                             <h2 id="current-heading" class="text-center text-sky-950 text-4xl p-2 underline">
                                 Current Weather
                             </h2>
                             <section id="current-data" class="text-center text-sky-950 text-2xl p-2">
-                                <div class="grid grid-cols-4 grid-rows-2 place-items-center">
+                                <div class="day0-container">
                                     <h3 id="day0-date" class="text-3xl">
                                         <!--content injected by main.js-->
                                     </h3>
@@ -432,163 +434,161 @@
                         </div>
                     </section>
                     <!--Five Day Forecast-->
-                    <section id="forecast-section" class="hidden col-span-2 row-span-2 bg-sky-500 text-center text-sky-200 text-xl p-2 font-semibold rounded-lg shadow-2xl">
-                        <div class="grid grid-cols-1 grid-rows-5">
-                            <h2 id="forecast-heading" class="row-span-1 text-center text-sky-950 text-4xl p-2 font-semibold underline">
+                    <section id="forecast-section" class="hidden bg-sky-500 text-center text-sky-200 text-xl p-2 font-semibold rounded-lg shadow-2xl">
+                        <div class="forecast-container">
+                            <h2 id="forecast-heading" class="text-center text-sky-950 text-4xl p-2 font-semibold underline">
                                 5-Day Forecast
                             </h2>
-                            <div class="grid grid-cols-6 grid-rows-1 row-span-4 gap-6">
-                                <section id="forecast-labels" class="bg-sky-950 p-8 rounded-md border-2 border-sky-200 shadow-lg">
-                                    <div class="grid grid-cols-1 grid-rows-7 place-items-center gap-6">
-                                        <h3 id="label-date">
-                                            Date:
-                                        </h3>
-                                        <h3 id="label-day">
-                                            Day of Week:
-                                        </h3>
-                                        <h3 id="label-descr">
-                                            Weather:
-                                        </h3>
-                                        <img id="label-icon" class="w-20" src="./assets/icons/rainbow.svg" alt="placeholder icon">
-                                        <h3 id="label-temp">
-                                            Temperature:
-                                        </h3>
-                                        <h3 id="label-humid">
-                                            Humidity:
-                                        </h3>
-                                        <h3 id="label-wind">
-                                            Wind Speed:
-                                        </h3>
-                                    </div>
-                                </section>
-                                <!--Day One-->
-                                <section id="day1-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
-                                    <div class="grid grid-cols-1 grid-rows-7 place-items-center gap-6">
-                                        <h3 id="day1-date" class="f-date">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day1-day">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day1-descr">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <img id="day1-icon" class="f-icon w-20" alt="weather icon">
-                                        <h3 id="day1-temp">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day1-humid">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day1-wind">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                    </div>
-                                </section>
-                                <!--Day Two-->
-                                <section id="day2-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
-                                    <div class="grid grid-cols-1 grid-rows-7 place-items-center gap-6">
-                                        <h3 id="day2-date" class="f-date">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day2-day">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day2-descr">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <img id="day2-icon" class="f-icon w-20" alt="weather icon">
-                                        <h3 id="day2-temp">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day2-humid">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day2-wind">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                    </div>
-                                </section>
-                                <!--Day Three-->
-                                <section id="day3-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
-                                    <div class="grid grid-cols-1 grid-rows-7 place-items-center gap-6">
-                                        <h3 id="day3-date" class="f-date">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day3-day">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day3-descr">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <img id="day3-icon" class="f-icon w-20" alt="weather icon">
-                                        <h3 id="day3-temp">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day3-humid">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day3-wind">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                    </div>
-                                </section>
-                                <!--Day Four-->
-                                <section id="day4-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
-                                    <div class="grid grid-cols-1 grid-rows-7 place-items-center gap-6">
-                                        <h3 id="day4-date" class="f-date">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day4-day">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day4-descr">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <img id="day4-icon" class="f-icon w-20" alt="weather icon">
-                                        <h3 id="day4-temp">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day4-humid">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day4-wind">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                    </div>
-                                </section>
-                                <!--Day Five-->
-                                <section id="day5-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
-                                    <div class="grid grid-cols-1 grid-rows-7 place-items-center gap-6">
-                                        <h3 id="day5-date" class="f-date">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day5-day">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day5-descr">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <img id="day5-icon" class="f-icon w-20" alt="weather icon">
-                                        <h3 id="day5-temp">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day5-humid">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                        <h3 id="day5-wind">
-                                            <!--content injected by main.js-->
-                                        </h3>
-                                    </div>
-                                </section>
-                            </div>
+                            <section id="forecast-labels" class="bg-sky-950 text-yellow-200 p-8 rounded-md border-2 border-sky-200 font-normal shadow-lg">
+                                <div class="label-container">
+                                    <h3 id="label-date">
+                                        Date:
+                                    </h3>
+                                    <h3 id="label-day">
+                                        Day of Week:
+                                    </h3>
+                                    <h3 id="label-descr">
+                                        Weather:
+                                    </h3>
+                                    <img id="label-icon" class="w-20" src="./assets/icons/rainbow.svg" alt="placeholder icon">
+                                    <h3 id="label-temp">
+                                        Temp:
+                                    </h3>
+                                    <h3 id="label-humid">
+                                        Humidity:
+                                    </h3>
+                                    <h3 id="label-wind">
+                                        Wind:
+                                    </h3>
+                                </div>
+                            </section>
+                            <!--Day One-->
+                            <section id="day1-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
+                                <div class="day1-container">
+                                    <h3 id="day1-date" class="f-date">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day1-day">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day1-descr">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <img id="day1-icon" class="f-icon w-20" alt="weather icon">
+                                    <h3 id="day1-temp">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day1-humid">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day1-wind">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                </div>
+                            </section>
+                            <!--Day Two-->
+                            <section id="day2-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
+                                <div class="day2-container">
+                                    <h3 id="day2-date" class="f-date">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day2-day">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day2-descr">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <img id="day2-icon" class="f-icon w-20" alt="weather icon">
+                                    <h3 id="day2-temp">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day2-humid">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day2-wind">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                </div>
+                            </section>
+                            <!--Day Three-->
+                            <section id="day3-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
+                                <div class="day3-container">
+                                    <h3 id="day3-date" class="f-date">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day3-day">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day3-descr">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <img id="day3-icon" class="f-icon w-20" alt="weather icon">
+                                    <h3 id="day3-temp">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day3-humid">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day3-wind">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                </div>
+                            </section>
+                            <!--Day Four-->
+                            <section id="day4-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
+                                <div class="day4-container">
+                                    <h3 id="day4-date" class="f-date">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day4-day">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day4-descr">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <img id="day4-icon" class="f-icon w-20" alt="weather icon">
+                                    <h3 id="day4-temp">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day4-humid">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day4-wind">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                </div>
+                            </section>
+                            <!--Day Five-->
+                            <section id="day5-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
+                                <div class="day5-container">
+                                    <h3 id="day5-date" class="f-date">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day5-day">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day5-descr">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <img id="day5-icon" class="f-icon w-20" alt="weather icon">
+                                    <h3 id="day5-temp">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day5-humid">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                    <h3 id="day5-wind">
+                                        <!--content injected by main.js-->
+                                    </h3>
+                                </div>
+                            </section>
                         </div>
                     </section>
                 </div>
             </main>
             <!--Footer-->
-            <footer id="footer" class="bg-sky-900 row-span-1">
-                <div class="grid grid-cols-1 grid-rows-1 h-full w-11/12 mx-auto place-items-center">
+            <footer id="footer" class="bg-sky-900">
+                <div class="footer-container">
                     <a id="data-source" class="text-center text-sky-200 text-lg p-5">
                         Data Provided By: OpenWeather
                     </a>
@@ -597,7 +597,7 @@
             <!--Loading-->
             <dialog>
                 <div class="loading-container">
-                    
+
                 </div>
             </dialog>
             <!--Error-->
