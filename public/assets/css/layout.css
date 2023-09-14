@@ -347,16 +347,20 @@
 
 .footer-container {
     grid-template-areas:
-    "data-source";
+    "data-source github";
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
 }
 
 /* Footer Item IDs */
 
 #data-source {
     grid-area: data-source;
-    place-self: center;
+}
+
+#github {
+    grid-area: github;
 }
 
 /* Error Modal Container
