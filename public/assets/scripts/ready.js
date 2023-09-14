@@ -70,6 +70,8 @@ jQuery(() => {
         $("#load-load").addClass("hidden");
         $("#search-section").removeClass("bg-slate-400");
         $("#history-section").removeClass("bg-slate-400");
+        $("#search-section").addClass("bg-sky-400");
+        $("#history-section").addClass("bg-sky-400");
         $("#search-button").addClass("hover:bg-sky-200");
         $("#search-button").addClass("hover:text-sky-950");
         $("#search-button").addClass("hover:border-sky-800");
