@@ -27,3 +27,5 @@ const rainy = "./assets/icons/rainy.svg";
 const stormy = "./assets/icons/stormy.svg";
 const snowy = "./assets/icons/snowy.svg";
 const hazy = "./assets/icons/hazy.svg";
+const misty = "./assets/icons/misty.svg";
+const notAvailable = "./assets/icons/NA.svg";

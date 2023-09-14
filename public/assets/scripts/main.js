@@ -156,7 +156,11 @@ const displayCurrentWeather = (currentData) => {
         $("#day0-icon").attr("src", snowy);
     } else if (currentData.weather[0].main === "Haze") {
         $("#day0-icon").attr("src", hazy);
-    };    
+    } else if (currentData.weather[0].main === "Mist") {
+        $("#day0-icon").attr("src", misty);
+    } else {
+        $("#day0-icon").attr("src", notAvailable);
+    };      
 };
 
 // displays five-day forecast
@@ -184,6 +188,10 @@ const displayForecastWeather = (forecastData) => {
         $("#day1-icon").attr("src", snowy);
     } else if (forecastData.list[0].weather[0].main === "Haze") {
         $("#day1-icon").attr("src", hazy);
+    } else if (currentData.weather[0].main === "Mist") {
+        $("#day0-icon").attr("src", misty);
+    } else {
+        $("#day0-icon").attr("src", notAvailable);
     };
 
     // Day two
@@ -207,6 +215,10 @@ const displayForecastWeather = (forecastData) => {
         $("#day2-icon").attr("src", snowy);
     } else if (forecastData.list[1].weather[0].main === "Haze") {
         $("#day2-icon").attr("src", hazy);
+    } else if (currentData.weather[0].main === "Mist") {
+        $("#day0-icon").attr("src", misty);
+    } else {
+        $("#day0-icon").attr("src", notAvailable);
     };
 
     // Day three
@@ -230,7 +242,11 @@ const displayForecastWeather = (forecastData) => {
         $("#day3-icon").attr("src", snowy);
     } else if (forecastData.list[2].weather[0].main === "Haze") {
         $("#day3-icon").attr("src", hazy);
-    };
+    } else if (currentData.weather[0].main === "Mist") {
+        $("#day0-icon").attr("src", misty);
+    } else {
+        $("#day0-icon").attr("src", notAvailable);
+    }; 
 
     // Day four
     $("#day4-data").removeClass("hidden");
@@ -253,6 +269,10 @@ const displayForecastWeather = (forecastData) => {
         $("#day4-icon").attr("src", snowy);
     } else if (forecastData.list[3].weather[0].main === "Haze") {
         $("#day4-icon").attr("src", hazy);
+    } else if (currentData.weather[0].main === "Mist") {
+        $("#day0-icon").attr("src", misty);
+    } else {
+        $("#day0-icon").attr("src", notAvailable);
     };
 
     // Day five
@@ -276,5 +296,9 @@ const displayForecastWeather = (forecastData) => {
         $("#day5-icon").attr("src", snowy);
     } else if (forecastData.list[4].weather[0].main === "Haze") {
         $("#day5-icon").attr("src", hazy);
-    };
+    } else if (currentData.weather[0].main === "Mist") {
+        $("#day0-icon").attr("src", misty);
+    } else {
+        $("#day0-icon").attr("src", notAvailable);
+    }; 
 };
