@@ -134,6 +134,7 @@
 
 #search-heading {
     grid-area: search-heading;
+    width: 100%;
 }
 
 #search-form {
@@ -201,6 +202,7 @@
 
 #history-heading {
     grid-area: history-heading;
+    width: 100%;
 }
 
 #load-form {
@@ -246,7 +248,7 @@
     grid-template-areas: 
     "current-heading"
     "current-data";
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 3fr;
     grid-template-columns: 1fr;
 }
 
@@ -254,6 +256,8 @@
 
 #current-heading {
     grid-area: current-heading;
+    width: 100%;
+    place-self: center;
 }
 
 #current-data {
@@ -282,7 +286,7 @@
     grid-template-areas:
     "forecast-heading forecast-heading forecast-heading forecast-heading forecast-heading forecast-heading"
     "forecast-labels day1-data day2-data day3-data day4-data day5-data";
-    grid-template-rows: 1fr 9fr;
+    grid-template-rows: 1fr 8fr;
     grid-template-columns: repeat(6, 1fr);
     place-items: center;
 }
@@ -291,6 +295,8 @@
 
 #forecast-heading {
     grid-area: forecast-heading;
+    width: 100%;
+    place-self: center;
 }
 
 #forecast-labels {
