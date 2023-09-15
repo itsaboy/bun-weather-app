@@ -109,6 +109,7 @@
 .history-container,
 .current-container,
 .forecast-container,
+.forecast-data-container,
 .save-container,
 .load-container {
     display: grid;
@@ -139,8 +140,8 @@
 
 #search-form {
     grid-area: search-form;
-    place-self: start;
     width: 100%;
+    place-self: start;
 }
 
 /* Search Form Container
@@ -207,8 +208,8 @@
 
 #load-form {
     grid-area: load-form;
-    place-self: start;
     width: 100%;
+    place-self: start;
 }
 
 /* History Form Container
@@ -248,7 +249,7 @@
     grid-template-areas: 
     "current-heading"
     "current-data";
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr 5fr;
     grid-template-columns: 1fr;
 }
 
@@ -284,20 +285,35 @@
 
 .forecast-container {
     grid-template-areas:
-    "forecast-heading forecast-heading forecast-heading forecast-heading forecast-heading forecast-heading"
-    "forecast-labels day1-data day2-data day3-data day4-data day5-data";
-    grid-template-rows: 1fr 8fr;
-    grid-template-columns: repeat(6, 1fr);
+    "forecast-heading"
+    "forecast-data";
+    grid-template-rows: 1fr 11fr;
+    grid-template-columns: 1fr;
     place-items: center;
 }
-
-/* Forecast Item IDs */
 
 #forecast-heading {
     grid-area: forecast-heading;
     width: 100%;
     place-self: center;
 }
+
+#forecast-data {
+    grid-area: forecast-data;
+    width: 100%;
+    place-self: center;
+}
+
+.forecast-data-container {
+    grid-template-areas:
+    "forecast-labels day1-data day2-data day3-data day4-data day5-data";
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    place-items: center;
+    width: 100%;
+}
+
+/* Forecast Item IDs */
 
 #forecast-labels {
     grid-area: forecast-labels;
@@ -353,9 +369,9 @@
 
 .footer-container {
     grid-template-areas:
-    "data-source github";
+    "data-source";
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     place-items: center;
 }
 

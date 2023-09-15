@@ -14,20 +14,23 @@
     }
 
     .forecast-container {
+        grid-template-rows: 1fr 15fr;
+        grid-template-columns: 1fr;
+    }
+
+    .forecast-data-container {
         grid-template-areas:
-        "forecast-heading"
         "forecast-labels"
         "day1-data"
         "day2-data"
         "day3-data"
         "day4-data"
         "day5-data";
-        grid-template-rows: repeat(7, 1fr);
+        grid-template-rows: repeat(6, 1fr);
         grid-template-columns: 1fr;
-        width: 95%;
     }
 
-    .forecast-container
+    .forecast-data-container
     .label-container,
     .day1-container,
     .day2-container,
@@ -52,7 +55,7 @@
 @media only screen and (max-width: 975px) {
 
     .body-container {
-        grid-template-rows: 0.75fr 9fr 0.25fr;
+        grid-template-rows: 1fr 9fr 0.25fr;
         grid-template-columns: 1fr;
         height: 100vh;
     }
@@ -74,6 +77,14 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .current-container {
+        grid-template-areas: 
+        "current-heading"
+        "current-data";
+        grid-template-rows: 5rem 2fr;
+        grid-template-columns: 1fr;
+    }
+
     .day0-container {
         grid-template-areas:
         "day0-date day0-day"
@@ -84,13 +95,12 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .footer-container {
+    .forecast-container {
         grid-template-areas:
-        "data-source"
-        "github";
+        "forecast-heading"
+        "forecast-data";
+        grid-template-rows: 5rem 2fr;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
-        gap: 0;
     }
 
 }
@@ -115,7 +125,7 @@
         "history-section"
         "current-section"
         "forecast-section";
-        grid-template-rows: repeat(2, 1fr) 2fr 12fr;
+        grid-template-rows: repeat(2, 1fr) 2fr 8fr;
         grid-template-columns: 1fr;
     }
 
@@ -129,15 +139,14 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .forecast-container {
+    .forecast-data-container {
         grid-template-areas:
-        "forecast-heading"
         "day1-data"
         "day2-data"
         "day3-data"
         "day4-data"
         "day5-data";
-        grid-template-rows: 1fr repeat(5, 5fr);
+        grid-template-rows: repeat(5, 1fr);
         grid-template-columns: 1fr;
         width: 95%;
     }
@@ -146,7 +155,7 @@
         display: none;
     }
 
-    .forecast-container
+    .forecast-data-container
     .label-container,
     .day1-container,
     .day2-container,
@@ -180,14 +189,14 @@
 @media only screen and (max-width: 500px) {
 
     .post-main-container {
-        grid-template-rows: repeat(2, 0.75fr) 3fr 10fr;
+        grid-template-rows: repeat(2, 1fr) 3fr 8fr;
     }
 
     .current-container {
         grid-template-areas: 
         "current-heading"
         "current-data";
-        grid-template-rows: 1fr 8fr;
+        grid-template-rows: 1fr 15fr;
         grid-template-columns: 1fr;
     }
 

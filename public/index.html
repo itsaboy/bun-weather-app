@@ -402,10 +402,10 @@
                         <img src="./assets/icons/loading.svg" id="load-load" class="hidden absolute inset-0 w-1/2 h-1/2 m-auto">
                     </section>
                     <!--Current Weather-->
-                    <section id="current-section" class="hidden bg-sky-500 rounded-lg shadow-2xl font-semibold">
+                    <section id="current-section" class="hidden bg-sky-500 rounded-lg shadow-2xl tex-x1 p-2 font-semibold">
                         <div class="current-container">
                             <h2 id="current-heading" class="text-center bg-sky-400 rounded-lg text-slate-950 text-4xl p-2">
-                                Current Weather
+                                Current
                             </h2>
                             <section id="current-data" class="text-center text-sky-950 text-2xl p-2">
                                 <div class="day0-container">
@@ -441,148 +441,152 @@
                             <h2 id="forecast-heading" class="text-center bg-sky-400 rounded-lg text-slate-950 text-4xl p-2 font-semibold">
                                 5-Day Forecast
                             </h2>
-                            <!--Forecast Labels-->
-                            <section id="forecast-labels" class="bg-sky-950 text-yellow-200 p-8 rounded-md border-2 border-sky-200 font-normal shadow-lg">
-                                <div class="label-container">
-                                    <h3 id="label-date">
-                                        Date:
-                                    </h3>
-                                    <h3 id="label-day">
-                                        Day:
-                                    </h3>
-                                    <h3 id="label-descr">
-                                        Weather:
-                                    </h3>
-                                    <img id="label-icon" class="w-20" src="./assets/icons/rainbow.svg" alt="placeholder icon">
-                                    <h3 id="label-temp">
-                                        Temp:
-                                    </h3>
-                                    <h3 id="label-humid">
-                                        Humidity:
-                                    </h3>
-                                    <h3 id="label-wind">
-                                        Wind:
-                                    </h3>
-                                </div>
-                            </section>
-                            <!--Day One-->
-                            <section id="day1-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
-                                <div class="day1-container">
-                                    <h3 id="day1-date" class="f-date">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day1-day">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day1-descr">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <img id="day1-icon" class="f-icon w-20" alt="weather icon">
-                                    <h3 id="day1-temp">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day1-humid">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day1-wind">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                </div>
-                            </section>
-                            <!--Day Two-->
-                            <section id="day2-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
-                                <div class="day2-container">
-                                    <h3 id="day2-date" class="f-date">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day2-day">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day2-descr">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <img id="day2-icon" class="f-icon w-20" alt="weather icon">
-                                    <h3 id="day2-temp">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day2-humid">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day2-wind">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                </div>
-                            </section>
-                            <!--Day Three-->
-                            <section id="day3-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
-                                <div class="day3-container">
-                                    <h3 id="day3-date" class="f-date">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day3-day">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day3-descr">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <img id="day3-icon" class="f-icon w-20" alt="weather icon">
-                                    <h3 id="day3-temp">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day3-humid">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day3-wind">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                </div>
-                            </section>
-                            <!--Day Four-->
-                            <section id="day4-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
-                                <div class="day4-container">
-                                    <h3 id="day4-date" class="f-date">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day4-day">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day4-descr">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <img id="day4-icon" class="f-icon w-20" alt="weather icon">
-                                    <h3 id="day4-temp">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day4-humid">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day4-wind">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                </div>
-                            </section>
-                            <!--Day Five-->
-                            <section id="day5-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
-                                <div class="day5-container">
-                                    <h3 id="day5-date" class="f-date">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day5-day">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day5-descr">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <img id="day5-icon" class="f-icon w-20" alt="weather icon">
-                                    <h3 id="day5-temp">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day5-humid">
-                                        <!--content injected by main.js-->
-                                    </h3>
-                                    <h3 id="day5-wind">
-                                        <!--content injected by main.js-->
-                                    </h3>
+                            <section id="forecast-data">
+                                <div class="forecast-data-container">
+                                    <!--Forecast Labels-->
+                                    <section id="forecast-labels" class="bg-sky-950 text-yellow-200 p-8 rounded-md border-2 border-sky-200 font-normal shadow-lg">
+                                        <div class="label-container">
+                                            <h3 id="label-date">
+                                                Date:
+                                            </h3>
+                                            <h3 id="label-day">
+                                                Day:
+                                            </h3>
+                                            <h3 id="label-descr">
+                                                Weather:
+                                            </h3>
+                                            <img id="label-icon" class="w-20" src="./assets/icons/rainbow.svg" alt="placeholder icon">
+                                            <h3 id="label-temp">
+                                                Temp:
+                                            </h3>
+                                            <h3 id="label-humid">
+                                                Humidity:
+                                            </h3>
+                                            <h3 id="label-wind">
+                                                Wind:
+                                            </h3>
+                                        </div>
+                                    </section>
+                                    <!--Day One-->
+                                    <section id="day1-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
+                                        <div class="day1-container">
+                                            <h3 id="day1-date" class="f-date">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day1-day">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day1-descr">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <img id="day1-icon" class="f-icon w-20" alt="weather icon">
+                                            <h3 id="day1-temp">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day1-humid">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day1-wind">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                        </div>
+                                    </section>
+                                    <!--Day Two-->
+                                    <section id="day2-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
+                                        <div class="day2-container">
+                                            <h3 id="day2-date" class="f-date">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day2-day">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day2-descr">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <img id="day2-icon" class="f-icon w-20" alt="weather icon">
+                                            <h3 id="day2-temp">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day2-humid">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day2-wind">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                        </div>
+                                    </section>
+                                    <!--Day Three-->
+                                    <section id="day3-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
+                                        <div class="day3-container">
+                                            <h3 id="day3-date" class="f-date">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day3-day">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day3-descr">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <img id="day3-icon" class="f-icon w-20" alt="weather icon">
+                                            <h3 id="day3-temp">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day3-humid">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day3-wind">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                        </div>
+                                    </section>
+                                    <!--Day Four-->
+                                    <section id="day4-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
+                                        <div class="day4-container">
+                                            <h3 id="day4-date" class="f-date">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day4-day">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day4-descr">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <img id="day4-icon" class="f-icon w-20" alt="weather icon">
+                                            <h3 id="day4-temp">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day4-humid">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day4-wind">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                        </div>
+                                    </section>
+                                    <!--Day Five-->
+                                    <section id="day5-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
+                                        <div class="day5-container">
+                                            <h3 id="day5-date" class="f-date">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day5-day">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day5-descr">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <img id="day5-icon" class="f-icon w-20" alt="weather icon">
+                                            <h3 id="day5-temp">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day5-humid">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                            <h3 id="day5-wind">
+                                                <!--content injected by main.js-->
+                                            </h3>
+                                        </div>
+                                    </section>
                                 </div>
                             </section>
                         </div>
@@ -594,9 +598,6 @@
                 <div class="footer-container">
                     <p id="data-source" class="text-center text-sky-200 text-lg p-5">
                         Data provided by <a href="https://openweathermap.org/" target="_blank" class="text-yellow-400 underline">OpenWeather</a>
-                    </p>
-                    <p id="github" class="text-center text-sky-200 text-lg p-5">
-                        <a href="https://github.com/itsaboy/bun-weather-app" target="_blank" class="text-yellow-400 underline">GitHub</a> Repo
                     </p>
                 </div>
             </footer>
