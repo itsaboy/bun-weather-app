@@ -158,6 +158,14 @@
         width: 95%; 
     }
 
+    #day1-data,
+    #day2-data,
+    #day3-data,
+    #day4-data,
+    #day5-data {
+        width: 60%;
+    }
+
     #error-modal {
         width: 75%;
         height: 50%;
@@ -195,6 +203,14 @@
         "day0-wind";
         grid-template-rows: repeat(8, 1fr);
         grid-template-columns: 1fr;
+    }
+
+    #day1-data,
+    #day2-data,
+    #day3-data,
+    #day4-data,
+    #day5-data {
+        width: 95%;
     }
 
 }

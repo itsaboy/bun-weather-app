@@ -43,7 +43,7 @@
                     <!--New Search-->
                     <section id="search-section" class="relative bg-sky-400 rounded-md border-2 border-sky-800 shadow-lg">
                         <div class="search-container">
-                            <h2 id="search-heading" class="text-center text-sky-950 text-2xl p-2 font-semibold">
+                            <h2 id="search-heading" class="text-center text-slate-950 text-2xl p-2 font-semibold">
                                 New Search
                             </h2>
                             <form id="search-form">
@@ -51,7 +51,7 @@
                                     <label for="country-input" id="country-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
                                         Country:
                                     </label>
-                                    <select id="country-input" class="bg-sky-200 w-24 py-1">
+                                    <select id="country-input" class="bg-sky-200 text-slate-950 w-24 py-1">
                                         <option value="none" selected disabled>Country:</option>
                                         <option value="USA">United States</option>
                                         <option value="AFG">Afghanistan</option>
@@ -309,7 +309,7 @@
                                     <label for="state-input" id="state-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
                                         State:
                                     </label>
-                                    <select id="state-input" class="bg-sky-200 w-24 py-1 disabled:opacity-25">
+                                    <select id="state-input" class="bg-sky-200 text-slate-950 w-24 py-1 disabled:opacity-25">
                                         <option value="none" selected disabled>State:</option>
                                         <option  value="Alabama">AL</option>
                                         <option  value="Alaska">AK</option>
@@ -366,7 +366,7 @@
                                         City:
                                     </label>
                                     <input id="city-input" class="bg-sky-200 w-48 py-1 px-2">
-                                    <button id="search-button" class="bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800">
+                                    <button id="search-button" class="bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800 active:translate-y-1">
                                         Search
                                     </button>
                                 </div>
@@ -377,21 +377,21 @@
                     <!--Search History-->
                     <section id="history-section" class="relative bg-sky-400 rounded-md border-2 border-sky-800 shadow-lg">
                         <div class="history-container">
-                            <h2 id="history-heading" class="text-center text-sky-950 text-2xl p-2 font-semibold">
+                            <h2 id="history-heading" class="text-center text-slate-950 text-2xl p-2 font-semibold">
                                 Location History
                             </h2>
                             <form id="load-form">
                                 <div class="load-container">
-                                    <button id="load-button" class="bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800">
+                                    <button id="load-button" class="bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800 active:translate-y-1">
                                         Load
                                     </button>
-                                    <button id="delete-button" class="bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800">
+                                    <button id="delete-button" class="bg-sky-900 w-24 py-1 text-sky-200 border-sky-200 border-solid border-2 rounded-lg shadow-md hover:bg-sky-200 hover:text-sky-950 hover:border-sky-800 active:translate-y-1">
                                         Delete
                                     </button>
                                     <label for="saved-locations" id="locations-label" class="text-center text-sky-950 text-xl p-2 font-semibold">
                                         Saved Locations:
                                     </label>
-                                    <select id="saved-locations" class="bg-sky-200 w-48 py-1">
+                                    <select id="saved-locations" class="bg-sky-200 text-slate-950 w-48 py-1">
                                         <option class="text-left">
                                             <!--content injected by main.js-->
                                         </option>
@@ -404,7 +404,7 @@
                     <!--Current Weather-->
                     <section id="current-section" class="hidden bg-sky-500 rounded-lg shadow-2xl font-semibold">
                         <div class="current-container">
-                            <h2 id="current-heading" class="text-center text-sky-950 text-4xl p-2 underline">
+                            <h2 id="current-heading" class="text-center text-slate-950 text-4xl p-2 underline">
                                 Current Weather
                             </h2>
                             <section id="current-data" class="text-center text-sky-950 text-2xl p-2">
@@ -438,9 +438,10 @@
                     <!--Five Day Forecast-->
                     <section id="forecast-section" class="hidden bg-sky-500 text-center text-sky-200 text-xl p-2 font-semibold rounded-lg shadow-2xl">
                         <div class="forecast-container">
-                            <h2 id="forecast-heading" class="text-center text-sky-950 text-4xl p-2 font-semibold underline">
+                            <h2 id="forecast-heading" class="text-center text-slate-950 text-4xl p-2 font-semibold underline">
                                 5-Day Forecast
                             </h2>
+                            <!--Forecast Labels-->
                             <section id="forecast-labels" class="bg-sky-950 text-yellow-200 p-8 rounded-md border-2 border-sky-200 font-normal shadow-lg">
                                 <div class="label-container">
                                     <h3 id="label-date">
@@ -465,7 +466,7 @@
                                 </div>
                             </section>
                             <!--Day One-->
-                            <section id="day1-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg">
+                            <section id="day1-data" class="bg-sky-800 p-8 rounded-md border-2 border-sky-200 shadow-lg hover:scale-125">
                                 <div class="day1-container">
                                     <h3 id="day1-date" class="f-date">
                                         <!--content injected by main.js-->
@@ -609,7 +610,7 @@
                         <!--content injected by errors.js-->
                     </p>
                     <button id="error-button"
-                        class="w-24 bg-red-400 px-4 py-1 rounded-full border-2 border-slate-950 hover:bg-slate-950 hover:border-slate-100 hover:text-red-400">
+                        class="w-24 bg-red-400 px-4 py-1 rounded-full border-2 border-slate-950 hover:bg-slate-950 hover:border-slate-100 hover:text-red-400 active:translate-y-1">
                         Ok
                     </button>
                 </div>
