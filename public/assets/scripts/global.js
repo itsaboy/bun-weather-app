@@ -21,11 +21,11 @@ let currentDate;
 let currentDayOfWeek;
 
 // Weather icon sources
-const sunny = "./assets/icons/sunny.svg";
-const cloudy = "./assets/icons/cloudy.svg";
-const rainy = "./assets/icons/rainy.svg";
-const stormy = "./assets/icons/stormy.svg";
-const snowy = "./assets/icons/snowy.svg";
-const hazy = "./assets/icons/hazy.svg";
-const misty = "./assets/icons/misty.svg";
-const notAvailable = "./assets/icons/NA.svg";
+const sunny = "/public/assets/icons/sunny.svg";
+const cloudy = "/public/assets/icons/cloudy.svg";
+const rainy = "/public/assets/icons/rainy.svg";
+const stormy = "/public/assets/icons/stormy.svg";
+const snowy = "/public/assets/icons/snowy.svg";
+const hazy = "/public/assets/icons/hazy.svg";
+const misty = "/public/assets/icons/misty.svg";
+const notAvailable = "/public/assets/icons/NA.svg";

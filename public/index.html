@@ -10,18 +10,18 @@
         <meta name="description" content="A web app that lets the user search a location and find the current weather plus the five-day forecast for that area">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--CSS-->
-        <link rel="stylesheet" href="./assets/css/layout.css">
-        <link rel="stylesheet" href="./assets/css/queries.css">
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="/public/assets/css/layout.css">
+        <link rel="stylesheet" href="/public/assets/css/queries.css">
+        <link rel="stylesheet" href="/public/assets/css/style.css">
         <!--External Scripts-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.9/dayjs.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.9/plugin/utc.min.js"></script>
         <!--Internal Scripts-->
-        <script src="./assets/scripts/global.js" defer></script>
-        <script src="./assets/scripts/main.js" defer></script>
-        <script src="./assets/scripts/errors.js" defer></script>
-        <script src="./assets/scripts/ready.js" defer></script>
+        <script src="/public/assets/scripts/global.js" defer></script>
+        <script src="/public/assets/scripts/main.js" defer></script>
+        <script src="/public/assets/scripts/errors.js" defer></script>
+        <script src="/public/assets/scripts/ready.js" defer></script>
     </head>
 
     <body class="bg-sky-900 font-primary">
@@ -372,7 +372,7 @@
                                 </div>
                             </form>
                         </div>
-                        <img src="./assets/icons/loading.svg" id="search-load" class="hidden absolute inset-0 w-1/2 h-1/2 m-auto">
+                        <img src="/public/assets/icons/loading.svg" id="search-load" class="hidden absolute inset-0 w-1/2 h-1/2 m-auto">
                     </section>
                     <!--Search History-->
                     <section id="history-section" class="relative bg-sky-400 rounded-lg border-2 border-sky-800 shadow-lg">
@@ -399,7 +399,7 @@
                                 </div>
                             </form>
                         </div>
-                        <img src="./assets/icons/loading.svg" id="load-load" class="hidden absolute inset-0 w-1/2 h-1/2 m-auto">
+                        <img src="/public/assets/icons/loading.svg" id="load-load" class="hidden absolute inset-0 w-1/2 h-1/2 m-auto">
                     </section>
                     <!--Current Weather-->
                     <section id="current-section" class="hidden bg-sky-500 rounded-lg shadow-2xl tex-x1 p-2 font-semibold">
@@ -455,7 +455,7 @@
                                             <h3 id="label-descr">
                                                 Weather:
                                             </h3>
-                                            <img id="label-icon" class="w-20" src="./assets/icons/rainbow.svg" alt="placeholder icon">
+                                            <img id="label-icon" class="w-20" src="/public/assets/icons/rainbow.svg" alt="placeholder icon">
                                             <h3 id="label-temp">
                                                 Temp:
                                             </h3>

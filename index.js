@@ -1,11 +1,14 @@
-import express from "express";
-import path from "path";
+import { Elysia } from "elysia";
+import { staticPlugin } from "@elysiajs/static";
 
-const app = express();
 const port = Bun.env.PORT;
 
-app.use(express.static(path.join(import.meta.dir, 'public')));
+const app = new Elysia()
+	.use(staticPlugin({
+        assets: 'public',
+        prefix: '/public'
+    }))
+	.get('/', () => Bun.file('./public/index.html'))
+	.listen(port)
 
-app.listen(port, () => {
-    console.log(`listening on port ${port}`);
-});
+console.log(`🦊 Server is listening on port ${app.server?.port}`)
